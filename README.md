@@ -3,11 +3,11 @@
 This repository contains the PyTorch implementation for 
 "SVNet: Where SO(3) Equivariance Meets Binarization on Point Cloud Representation" 
 by 
-[Zhuo Su](https://zhuogege1943.com/homepage/)\*, 
+[Zhuo Su](https://zhuogege1943.com/homepage/), 
 [Max Welling](https://scholar.google.com/citations?user=8200InoAAAAJ&hl=en), 
 [Matti Pietikäinen](https://en.wikipedia.org/wiki/Matti_Pietik%C3%A4inen_(academic)) and 
-[Li Liu](http://lilyliliu.com/)\*\* 
-(\[[arXiv](https://arxiv.org/abs/2209.05924)\]
+[Li Liu](http://lilyliliu.com/)\* 
+(\* corresponding author).\[[arXiv](https://arxiv.org/abs/2209.05924)\]
 
 The writing style of this code is based on [Pixel Difference Convolution](https://github.com/zhuoinoulu/pidinet).
 
@@ -85,7 +85,7 @@ python main_cls_dgcnn.py --dataset scanobjectnn --model=svnet --data-dir /data/s
 python main_cls_dgcnn.py --dataset scanobjectnn --model=svnet --data-dir /data/scanobjectnn --save-dir result/train --rot aligned --rot-test so3 --binary --wd 0
 ```
 
-## Evaluation (with random rotation on 3D space)
+## Evaluation (with random rotation in 3D space)
 
 Based on the above script, simply add --test and --rot-test to evaluate the model. For example:
 ```bash
@@ -104,7 +104,7 @@ python params_macs/sv_dgcnn.py
 
 Please see [scripts.sh](scripts.sh) for more details.
 
-The performance of some of the models are listed below (click the items to download the checkpoints and training logs). It should be noted that `*i*/so(3)` got the similar results:
+The performance of some of the models are listed below (click the items to download the checkpoints and training logs). It should be noted that `i/so(3)` got the similar results:
 
 | Dataset | Backbone | Version | Knowledge distillation | ACC (*z*/so(3)) | Training logs | Checkpoint |
 |---------|----------|---------|------------------------|-----------------|---------------|------------|
@@ -112,17 +112,31 @@ The performance of some of the models are listed below (click the items to downl
 | ModelNet40 | PointNet | Binary |  | 76.3 | [log](logs/sv_pointnet_binary_modelnet40.txt) | [link](checkpoints/sv_pointnet_binary_modelnet40.pth) |
 | ModelNet40 | DGCNN | Full-precision |  | 90.3 | [log](logs/sv_dgcnn_fp_modelnet40.txt) | [link](checkpoints/sv_dgcnn_fp_modelnet40.pth) |
 | ModelNet40 | DGCNN | Binary |  | 83.8 | [log](logs/sv_dgcnn_binary_modelnet40.txt) | [link](checkpoints/sv_dgcnn_binary_modelnet40.pth) |
-| ModelNet40 | DGCNN | Binary | ✔ | 86.8 | [log](logs/sv_dgcnn_binary_kd_modelnet40.txt) | [link](checkpoints/sv_dgcnn_binary_kd_modelnet40.pth) |
-|---------|----------|---------|------------------------|-----------------|---------------|------------|
+| ModelNet40 | DGCNN | Binary | yes | 86.8 | [log](logs/sv_dgcnn_binary_kd_modelnet40.txt) | [link](checkpoints/sv_dgcnn_binary_kd_modelnet40.pth) |
+| | | | | | | |
 | ShapeNet | PointNet | Full-precision |  | 78.2 | | [link](checkpoints/sv_pointnet_fp_shapenet.pth) |
 | ShapeNet | PointNet | Binary |  | 67.3 | | [link](checkpoints/sv_pointnet_binary_shapenet.pth) |
 | ShapeNet | DGCNN | Full-precision |  | 81.4 | [log](logs/sv_dgcnn_fp_shapenet.txt) | [link](checkpoints/sv_dgcnn_fp_shapenet.pth) |
 | ShapeNet | DGCNN | Binary |  | 68.4 | [log](logs/sv_dgcnn_binary_shapenet.txt) | [link](checkpoints/sv_dgcnn_binary_shapenet.pth) |
-| ShapeNet | DGCNN | Binary | ✔ | 71.5 | [log](logs/sv_dgcnn_binary_kd_shapenet.txt) | [link](checkpoints/sv_dgcnn_binary_kd_shapenet.pth) |
-|---------|----------|---------|------------------------|-----------------|---------------|------------|
+| ShapeNet | DGCNN | Binary | yes | 71.5 | [log](logs/sv_dgcnn_binary_kd_shapenet.txt) | [link](checkpoints/sv_dgcnn_binary_kd_shapenet.pth) |
+| | | | | | | |
 | ScanObjectNN | DGCNN | Full-precision |  | 76.2 | [log](logs/sv_dgcnn_fp_scanobjectnn.txt) | [link](checkpoints/sv_dgcnn_fp_scanobjectnn.pth) |
 | ScanObjectNN | DGCNN | Binary |  | 52.9 | [log](logs/sv_dgcnn_binary_scanobjectnn.txt) | [link](checkpoints/sv_dgcnn_binary_scanobjectnn.pth) |
-| ScanObjectNN | DGCNN | Binary | ✔ | 60.9 | [log](logs/sv_dgcnn_binary_kd_scanobjectnn.txt) | [link](checkpoints/sv_dgcnn_binary_kd_scanobjectnn.pth) |
+| ScanObjectNN | DGCNN | Binary | yes | 60.9 | [log](logs/sv_dgcnn_binary_kd_scanobjectnn.txt) | [link](checkpoints/sv_dgcnn_binary_kd_scanobjectnn.pth) |
+
+
+### Citation
+
+If you find our project useful in your research, please consider citing:
+
+```
+@inproceedings{su2022svnet,
+  title={SVNet: Where SO (3) Equivariance Meets Binarization on Point Cloud Representation},
+  author={Su, Zhuo and Welling, Max and Pietik{\"a}inen, Matti and Liu, Li},
+  booktitle={3D Vision},
+  year={2022}
+}
+```
 
 
 ## Acknowledgement
