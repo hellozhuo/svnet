@@ -133,7 +133,7 @@ If you find our project useful in your research, please consider citing:
 @inproceedings{su2022svnet,
   title={SVNet: Where SO (3) Equivariance Meets Binarization on Point Cloud Representation},
   author={Su, Zhuo and Welling, Max and Pietik{\"a}inen, Matti and Liu, Li},
-  booktitle={3D Vision},
+  booktitle={International Conference on 3D Vision},
   year={2022}
 }
 ```
