@@ -104,25 +104,25 @@ python params_macs/sv_dgcnn.py
 
 Please see [scripts.sh](scripts.sh) for more details.
 
-The performance of some of the models are listed below (click the items to download the checkpoints and training logs). It should be noted that `i/so(3)` got the similar results:
+The performance of some of the models are listed below (click the items to download the checkpoints and training logs). For ModelNet40 and ScanObjectNN, we report accuracy (\%) in `z/so(3)` column. For ShapeNet, we report IOU (\%). KD means using knowledge distillation. It should be noted that `i/so(3)` got the similar results:
 
-| Dataset | Backbone | Version | Knowledge distillation | ACC (*z*/so(3)) | Training logs | Checkpoint |
+| Dataset | Backbone | Binary | KD | *z*/so(3)| Training logs | Checkpoint |
 |---------|----------|---------|------------------------|-----------------|---------------|------------|
-| ModelNet40 | PointNet | Full-precision |  | 86.3 | [log](logs/sv_pointnet_fp_modelnet40.txt) | [link](checkpoints/sv_pointnet_fp_modelnet40.pth) |
-| ModelNet40 | PointNet | Binary |  | 76.3 | [log](logs/sv_pointnet_binary_modelnet40.txt) | [link](checkpoints/sv_pointnet_binary_modelnet40.pth) |
-| ModelNet40 | DGCNN | Full-precision |  | 90.3 | [log](logs/sv_dgcnn_fp_modelnet40.txt) | [link](checkpoints/sv_dgcnn_fp_modelnet40.pth) |
-| ModelNet40 | DGCNN | Binary |  | 83.8 | [log](logs/sv_dgcnn_binary_modelnet40.txt) | [link](checkpoints/sv_dgcnn_binary_modelnet40.pth) |
-| ModelNet40 | DGCNN | Binary | yes | 86.8 | [log](logs/sv_dgcnn_binary_kd_modelnet40.txt) | [link](checkpoints/sv_dgcnn_binary_kd_modelnet40.pth) |
+| ModelNet40 | PointNet | |  | 86.3 | [log](logs/sv_pointnet_fp_modelnet40.txt) | [link](checkpoints/sv_pointnet_fp_modelnet40.pth) |
+| ModelNet40 | PointNet | Yes |  | 76.3 | [log](logs/sv_pointnet_binary_modelnet40.txt) | [link](checkpoints/sv_pointnet_binary_modelnet40.pth) |
+| ModelNet40 | DGCNN | |  | 90.3 | [log](logs/sv_dgcnn_fp_modelnet40.txt) | [link](checkpoints/sv_dgcnn_fp_modelnet40.pth) |
+| ModelNet40 | DGCNN | Yes |  | 83.8 | [log](logs/sv_dgcnn_binary_modelnet40.txt) | [link](checkpoints/sv_dgcnn_binary_modelnet40.pth) |
+| ModelNet40 | DGCNN | Yes | yes | 86.8 | [log](logs/sv_dgcnn_binary_kd_modelnet40.txt) | [link](checkpoints/sv_dgcnn_binary_kd_modelnet40.pth) |
 | | | | | | | |
-| ShapeNet | PointNet | Full-precision |  | 78.2 | | [link](checkpoints/sv_pointnet_fp_shapenet.pth) |
-| ShapeNet | PointNet | Binary |  | 67.3 | | [link](checkpoints/sv_pointnet_binary_shapenet.pth) |
-| ShapeNet | DGCNN | Full-precision |  | 81.4 | [log](logs/sv_dgcnn_fp_shapenet.txt) | [link](checkpoints/sv_dgcnn_fp_shapenet.pth) |
-| ShapeNet | DGCNN | Binary |  | 68.4 | [log](logs/sv_dgcnn_binary_shapenet.txt) | [link](checkpoints/sv_dgcnn_binary_shapenet.pth) |
-| ShapeNet | DGCNN | Binary | yes | 71.5 | [log](logs/sv_dgcnn_binary_kd_shapenet.txt) | [link](checkpoints/sv_dgcnn_binary_kd_shapenet.pth) |
+| ShapeNet | PointNet |  |  | 78.2 | | [link](checkpoints/sv_pointnet_fp_shapenet.pth) |
+| ShapeNet | PointNet | Yes |  | 67.3 | | [link](checkpoints/sv_pointnet_binary_shapenet.pth) |
+| ShapeNet | DGCNN |  |  | 81.4 | [log](logs/sv_dgcnn_fp_shapenet.txt) | [link](checkpoints/sv_dgcnn_fp_shapenet.pth) |
+| ShapeNet | DGCNN | Yes |  | 68.4 | [log](logs/sv_dgcnn_binary_shapenet.txt) | [link](checkpoints/sv_dgcnn_binary_shapenet.pth) |
+| ShapeNet | DGCNN | Yes | yes | 71.5 | [log](logs/sv_dgcnn_binary_kd_shapenet.txt) | [link](checkpoints/sv_dgcnn_binary_kd_shapenet.pth) |
 | | | | | | | |
-| ScanObjectNN | DGCNN | Full-precision |  | 76.2 | [log](logs/sv_dgcnn_fp_scanobjectnn.txt) | [link](checkpoints/sv_dgcnn_fp_scanobjectnn.pth) |
-| ScanObjectNN | DGCNN | Binary |  | 52.9 | [log](logs/sv_dgcnn_binary_scanobjectnn.txt) | [link](checkpoints/sv_dgcnn_binary_scanobjectnn.pth) |
-| ScanObjectNN | DGCNN | Binary | yes | 60.9 | [log](logs/sv_dgcnn_binary_kd_scanobjectnn.txt) | [link](checkpoints/sv_dgcnn_binary_kd_scanobjectnn.pth) |
+| ScanObjectNN | DGCNN |  |  | 76.2 | [log](logs/sv_dgcnn_fp_scanobjectnn.txt) | [link](checkpoints/sv_dgcnn_fp_scanobjectnn.pth) |
+| ScanObjectNN | DGCNN | Yes |  | 52.9 | [log](logs/sv_dgcnn_binary_scanobjectnn.txt) | [link](checkpoints/sv_dgcnn_binary_scanobjectnn.pth) |
+| ScanObjectNN | DGCNN | Yes | yes | 60.9 | [log](logs/sv_dgcnn_binary_kd_scanobjectnn.txt) | [link](checkpoints/sv_dgcnn_binary_kd_scanobjectnn.pth) |
 
 
 ### Citation
