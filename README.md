@@ -11,7 +11,7 @@ by
 
 The writing style of this code is based on [Pixel Difference Convolution](https://github.com/zhuoinoulu/pidinet).
 
-If you find something useful from our work, please consider citing [our paper](svnet.bib). 
+If you find something useful here, please consider citing [this paper](svnet.bib). 
 
 ## Introduction
 
